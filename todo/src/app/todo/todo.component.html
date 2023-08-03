@@ -1,7 +1,8 @@
 <h2>Todo</h2>
 
 <div class="container">
-    <form (ngSubmit)="saveTodo()">
+    <div class="alert alert-warning" *ngIf="todoForm.invalid">Please Enter valid values</div>
+    <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
     <fieldset class="form-group">
         <label>Description</label>
         <input type="text" [(ngModel)]="todo.description" class="form-control" name="description" required>
