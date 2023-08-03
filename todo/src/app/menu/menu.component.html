@@ -1,0 +1,17 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div>
+            <a href="#" class="navbar-brand">Todo Management</a>
+        </div>
+
+        <ul class="navbar-nav" >
+            <li><a routerLink="#" *ngIf="authService.isUserLoggedIn()">Home</a></li>
+            <li><a routerLink="/todos" *ngIf="authService.isUserLoggedIn()">Todos</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collaps justify-content-end">
+            <li><a routerLink="/login" *ngIf="!authService.isUserLoggedIn()">Login</a></li>
+            <li><a routerLink="/logout" *ngIf="authService.isUserLoggedIn()">Logout</a></li>
+        </ul>
+    </nav>
+</header>
